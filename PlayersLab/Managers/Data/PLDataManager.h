@@ -26,5 +26,6 @@ typedef void (^PLDataManagerFailLoad)(NSError *p_error);
 
 + (void) getAllPlayers;
 + (void) getPlayersByName: (NSString *)p_name;
++ (void) addPlayerWithName: (NSString *)p_name withSport: (NSString *)p_sport andCountry: (NSString *)p_country;
 
 @end

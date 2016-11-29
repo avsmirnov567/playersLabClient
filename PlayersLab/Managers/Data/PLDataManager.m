@@ -52,6 +52,14 @@
          }];
 }
 
++ (void)addPlayerWithName:(NSString *)p_name withSport:(NSString *)p_sport andCountry:(NSString *)p_country {
+    AFHTTPSessionManager *manager= [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    
+}
+
 + (void)parsePlayers: (id)json {
     NSMutableArray<PLListCellViewModel *> *allPlayers = [NSMutableArray new];
     

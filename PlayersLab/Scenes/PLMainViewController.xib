@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PLMainViewController">
+            <connections>
+                <outlet property="addBtn" destination="g4i-bO-SjO" id="OBf-gA-vi4"/>
+                <outlet property="countryInput" destination="gQN-KA-YtB" id="HUN-bN-kzt"/>
+                <outlet property="nameInput" destination="05f-yO-SVh" id="hIt-dD-yCw"/>
+                <outlet property="nameInputField" destination="Lfq-Ol-75G" id="Za1-Xs-Tfn"/>
+                <outlet property="searchButton" destination="vKc-Ob-Pu6" id="yei-qF-S0g"/>
+                <outlet property="showAllBtn" destination="oL3-ic-J5q" id="YBn-1o-N59"/>
+                <outlet property="sportInput" destination="l8M-6T-iXh" id="2BA-XE-mUS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oL3-ic-J5q">
+                    <rect key="frame" x="50" y="100" width="500" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="pf3-Kh-DDK"/>
+                    </constraints>
+                    <state key="normal" title="Просмотреть всех игроков"/>
+                    <connections>
+                        <action selector="showAllClicked:" destination="-1" eventType="touchUpInside" id="4rI-DY-TKo"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lfq-Ol-75G">
+                    <rect key="frame" x="50" y="194" width="500" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKc-Ob-Pu6">
+                    <rect key="frame" x="50" y="224" width="500" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="vPE-Zu-Bim"/>
+                    </constraints>
+                    <state key="normal" title="Поиск игроков по имени"/>
+                    <connections>
+                        <action selector="searchClicked:" destination="-1" eventType="touchUpInside" id="Kty-Yc-ouh"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите имя..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="05f-yO-SVh">
+                    <rect key="frame" x="50" y="318" width="500" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите страну..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQN-KA-YtB">
+                    <rect key="frame" x="50" y="358" width="500" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите вид спорта..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l8M-6T-iXh">
+                    <rect key="frame" x="50" y="398" width="500" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4i-bO-SjO">
+                    <rect key="frame" x="50" y="428" width="500" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="R2f-SR-eZk"/>
+                    </constraints>
+                    <state key="normal" title="Добавить игрока в базу"/>
+                    <connections>
+                        <action selector="addClicked:" destination="-1" eventType="touchUpInside" id="zS3-Z1-Ecx"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="gQN-KA-YtB" firstAttribute="top" secondItem="05f-yO-SVh" secondAttribute="bottom" constant="10" id="0ls-dR-ifB"/>
+                <constraint firstItem="Lfq-Ol-75G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="7Dk-eq-0ev"/>
+                <constraint firstItem="g4i-bO-SjO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="7oF-u6-E1K"/>
+                <constraint firstAttribute="trailing" secondItem="Lfq-Ol-75G" secondAttribute="trailing" constant="50" id="Axa-1i-9jA"/>
+                <constraint firstItem="l8M-6T-iXh" firstAttribute="top" secondItem="gQN-KA-YtB" secondAttribute="bottom" constant="10" id="JF9-jb-Jya"/>
+                <constraint firstAttribute="trailing" secondItem="gQN-KA-YtB" secondAttribute="trailing" constant="50" id="JHy-ZE-P4s"/>
+                <constraint firstItem="g4i-bO-SjO" firstAttribute="top" secondItem="l8M-6T-iXh" secondAttribute="bottom" id="Ney-JO-G88"/>
+                <constraint firstItem="oL3-ic-J5q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="XY4-ze-bqT"/>
+                <constraint firstItem="oL3-ic-J5q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="aXM-ya-zh6"/>
+                <constraint firstItem="l8M-6T-iXh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="d7Q-2b-4WF"/>
+                <constraint firstItem="05f-yO-SVh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="gVd-oO-1Fo"/>
+                <constraint firstItem="gQN-KA-YtB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="m9a-Fq-plF"/>
+                <constraint firstAttribute="trailing" secondItem="oL3-ic-J5q" secondAttribute="trailing" constant="50" id="nHH-L7-OlR"/>
+                <constraint firstItem="vKc-Ob-Pu6" firstAttribute="top" secondItem="Lfq-Ol-75G" secondAttribute="bottom" id="oNt-bI-BAB"/>
+                <constraint firstItem="Lfq-Ol-75G" firstAttribute="top" secondItem="oL3-ic-J5q" secondAttribute="bottom" constant="50" id="ozF-PZ-xXD"/>
+                <constraint firstAttribute="trailing" secondItem="g4i-bO-SjO" secondAttribute="trailing" constant="50" id="q3s-qB-pJX"/>
+                <constraint firstItem="05f-yO-SVh" firstAttribute="top" secondItem="vKc-Ob-Pu6" secondAttribute="bottom" constant="50" id="seS-N5-aRX"/>
+                <constraint firstAttribute="trailing" secondItem="05f-yO-SVh" secondAttribute="trailing" constant="50" id="w4S-1I-FoT"/>
+                <constraint firstAttribute="trailing" secondItem="vKc-Ob-Pu6" secondAttribute="trailing" constant="50" id="wZF-ic-la6"/>
+                <constraint firstAttribute="trailing" secondItem="l8M-6T-iXh" secondAttribute="trailing" constant="50" id="xps-Q8-mG5"/>
+                <constraint firstItem="vKc-Ob-Pu6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="yEe-eq-hTO"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

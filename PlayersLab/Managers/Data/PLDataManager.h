@@ -15,9 +15,18 @@
 
 @end
 
+@protocol PLDataManagerAlertDelegate <NSObject>
+
+- (void) displayAlertSuccess: (NSString *)p_responseString;
+- (void) displayAlertError:(NSString *)p_errorDescription;
+
+@end
+
+
 @interface PLDataManager : NSObject
 
 @property (nonatomic, weak) id<PLDataManagerDelegate> delegate;
+@property (nonatomic, weak) id<PLDataManagerAlertDelegate> alertDelegate;
 
 + (instancetype)sharedInstance;
 

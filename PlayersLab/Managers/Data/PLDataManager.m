@@ -7,7 +7,8 @@
 //
 
 #import "PLDataManager.h"
-#import <AFNetworking.h>
+#import "AFNetworking.h"
+#import <SBJson/SBJson5.h>
 
 @implementation PLDataManager
 
@@ -55,8 +56,29 @@
 + (void)addPlayerWithName:(NSString *)p_name withSport:(NSString *)p_sport andCountry:(NSString *)p_country {
     AFHTTPSessionManager *manager= [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
     
+    NSArray *objects = @[p_name, p_sport, p_country];
+    NSArray *keys = @[@"Name", @"Sports", @"Country"];
+    
+    NSDictionary *player = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+    
+    NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:@"http://playerslab.cloudapp.net/Service1.svc/addPlayer" parameters:nil error:nil];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:player options:0 error:nil];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    [request setHTTPBody:[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [[manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        
+        if (!error) {
+            [[PLDataManager sharedInstance].alertDelegate displayAlertSuccess: [NSString stringWithFormat:@"%@", responseObject]];
+        } else {
+            NSLog(@"%@", error.description);
+            [[PLDataManager sharedInstance].alertDelegate displayAlertError:error.description];
+        }
+    }] resume];
     
 }
 

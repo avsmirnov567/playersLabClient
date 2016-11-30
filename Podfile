@@ -3,9 +3,9 @@
 
 target 'PlayersLab' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
+   use_frameworks!
 
-  pod 'PureLayout'
   pod 'AFNetworking', '~> 3.0'
+  pod 'SBJson', '~> 5.0'
 
 end

@@ -8,8 +8,9 @@
 
 #import "PLMainViewController.h"
 #import "PLRouter.h"
+#import "PLDataManager.h"
 
-@interface PLMainViewController ()<UITextFieldDelegate>
+@interface PLMainViewController ()<UITextFieldDelegate, PLDataManagerAlertDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *showAllBtn;
 @property (weak, nonatomic) IBOutlet UITextField *nameInputField;
@@ -26,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.nameInputField.delegate = self;
+    [PLDataManager sharedInstance].alertDelegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,14 +47,52 @@
 }
 
 - (IBAction)addClicked:(id)sender {
-    if (self.nameInput.text.length > 0 && self.countryInput.text.length > 0 && self.countryInput.text.length > 0){
-        
+    if (self.nameInput.text.length > 0 && self.sportInput.text.length > 0 && self.countryInput.text.length > 0){
+        [PLDataManager addPlayerWithName:self.nameInput.text withSport:self.sportInput.text andCountry:self.countryInput.text];
     }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
+}
+
+-(void)displayAlertError:(NSString *)p_errorDescription{
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Ошибка!"
+                                  message:p_errorDescription
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             [self dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    [alert addAction:ok];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)displayAlertSuccess:(NSString *)p_responseString{
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Запрос выполнен!"
+                                  message:[NSString stringWithFormat:@"Ответ: %@", p_responseString]
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             [self dismissViewControllerAnimated:YES completion:nil];
+                             self.nameInput.text = @"";
+                             self.sportInput.text = @"";
+                             self.countryInput.text = @"";
+                         }];
+    [alert addAction:ok];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end

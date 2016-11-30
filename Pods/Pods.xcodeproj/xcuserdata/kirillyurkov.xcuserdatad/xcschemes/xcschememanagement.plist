@@ -14,25 +14,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SBJson.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>3F72730AF71DCE4CCEDD56134CB635A9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D4FBB13BA842E5C82587A704786E1FC5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F221F29A3EA0F820A49FE311D4F1589C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

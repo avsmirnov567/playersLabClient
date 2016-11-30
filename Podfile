@@ -6,6 +6,5 @@ target 'PlayersLab' do
    use_frameworks!
 
   pod 'AFNetworking', '~> 3.0'
-  pod 'SBJson', '~> 5.0'
 
 end

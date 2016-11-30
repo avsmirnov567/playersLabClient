@@ -14,16 +14,13 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - SBJson (5.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
-  - SBJson (~> 5.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  SBJson: 73c848dc34be51fda282fab12bda6c426f5ead08
 
-PODFILE CHECKSUM: 29d9898f2922bc1dfca37f021d9adc02ec262e6d
+PODFILE CHECKSUM: 93d59a3710c1b185287bcec8f0dc288ab8cdd505
 
 COCOAPODS: 1.1.1

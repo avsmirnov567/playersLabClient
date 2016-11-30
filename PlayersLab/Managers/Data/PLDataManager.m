@@ -8,7 +8,6 @@
 
 #import "PLDataManager.h"
 #import "AFNetworking.h"
-#import <SBJson/SBJson5.h>
 
 @implementation PLDataManager
 
